@@ -27,7 +27,12 @@ Very simple bash script to create .hpp and .cpp files for a custom class name in
 
   ###### \<className> is the custom name for your C++ class.
 
-  
+* ## Options:
+  * #### *-dir*
+    Option that enables to enter desired custom destination for the .hpp and .cpp files to be created
+    ##### Example usage:
+        createClass -dir ~/my_programming_project/
+      If the directory doesn't exist, the script will stop and exit message will pop up!
 
 * ## Info:
   Feel free to edit this as you like. Create issue or contact me on discord *@gingeros* with any problems or questions.
