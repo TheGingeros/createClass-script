@@ -35,7 +35,7 @@ Very simple bash script to create .hpp and .cpp files for a custom class name in
       If the directory doesn't exist, the script will stop and exit message will pop up!
 
 * ## Info:
-  Feel free to edit this as you like. Create issue or contact me on discord *@gingeros* with any problems or questions.
+  Feel free to edit this as you like. Create issue or contact me on discord *gingeros* with any problems or questions.
 
   Enjoy!
   
