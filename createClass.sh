@@ -5,9 +5,11 @@ output_dir="."
 
 # Function to display usage information
 usage() {
-  echo "Usage: $0 [-dir <output_directory>] <class_name>"
+  echo "Usage: createClass [-dir <output_directory>] <class_name>"
   echo "Options:"
-  echo "  -dir <output_directory>   Specify the output directory for the new files"
+  echo ""
+  echo "Specify output directory:"
+  echo "  		-dir <output_directory>"
   exit 1
 }
 
@@ -18,13 +20,13 @@ while [ "$#" -gt 0 ]; do
       shift
       if [ -n "$1" ]; then
         output_dir="$1"
-        
+
         # Check if the specified directory exists
         if [ ! -d "$output_dir" ]; then
           echo "Error: Directory '$output_dir' does not exist."
           exit 1
         fi
-        
+
         shift
       else
         usage
@@ -54,12 +56,17 @@ touch $cpp_file
 cat > $header_file <<EOL
 #pragma once
 
-class ${class_name} {
+class ${class_name}
+{
 public:
+    // Constructor
     ${class_name}();
-    ~${class_name}();
-    
-    // Add class methods and members here
+
+    // Get and Set methods
+
+    // Methods
+private:
+
 };
 EOL
 
@@ -67,16 +74,12 @@ EOL
 cat > $cpp_file <<EOL
 #include "${class_name}.hpp"
 
-${class_name}::${class_name}() {
-    // Constructor implementation
-}
+${class_name}::${class_name}(){}
 
-${class_name}::~${class_name}() {
-    // Destructor implementation
-}
+// Get and Set Methods
 
-// Implement class methods here
+// Methods
+
 EOL
 
 echo "Created files: $header_file and $cpp_file"
-
